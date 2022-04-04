@@ -34,7 +34,7 @@ def _get_last_import_expression_from_beginning(
 
 def _update_file(f: io.TextIOWrapper) -> None:
     contents = f.read()
-    lines = f.read()
+    lines = contents.split('\n')
     parsed = ast.parse(contents)
     last_import = _get_last_import_expression_from_beginning(parsed)
 

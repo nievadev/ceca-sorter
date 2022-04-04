@@ -86,7 +86,12 @@ class RodriSorter(object):
                     next_line = ""
                     while ")" not in next_line and counter < len(contents):
                         counter += 1
-                        next_line = contents[counter]
+
+                        try:
+                            next_line = contents[counter]
+                        except IndexError:
+                            break
+
                         base_line += "\n" + next_line
                 if not self.first_import_line:
                     # mark first occurence of import statement.
