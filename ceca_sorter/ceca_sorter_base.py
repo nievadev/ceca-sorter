@@ -1,7 +1,7 @@
 from typing import List, Tuple
 
 
-class RodriSorter(object):
+class CecaSorter(object):
     def __init__(
         self, contents: str, delimiter: str, project_modules: List[str]
     ) -> None:

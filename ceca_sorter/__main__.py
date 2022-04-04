@@ -1,4 +1,4 @@
-from .rodri_sorter_base import RodriSorter
+from .ceca_sorter_base import CecaSorter
 import ast
 import click
 import io
@@ -42,7 +42,7 @@ def _update_file(f: io.TextIOWrapper) -> None:
         return
 
     to_sort = "\n".join(lines[:last_import.end_lineno])
-    sorter = RodriSorter(to_sort, '\n', [])
+    sorter = CecaSorter(to_sort, '\n', [])
     result = sorter.reorganize().strip()
     no_imports_contents = "\n".join(lines[last_import.end_lineno:])
     new_contents = f'{result}\n{no_imports_contents}'
